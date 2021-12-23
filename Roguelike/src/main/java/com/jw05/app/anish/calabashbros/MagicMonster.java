@@ -5,9 +5,14 @@ import java.util.concurrent.TimeUnit;
 
 public class MagicMonster extends Monster{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public MagicMonster(World world, Color color)
     {
-        super(world, color, 30, 30, 5, 30);
+        super(world, (char) 3, color, 30, 5, 30);
     }
 
     @Override
@@ -30,7 +35,7 @@ public class MagicMonster extends Monster{
     {
         int x = getX(), y = getY();
         int targetx = x + directions[choose][0], targety = y + directions[choose][1];
-        if (targetx >= 0 && targetx < world.MAZE_WIDTH && targety >= 0 && targety < world.MAZE_HEIGHT) {
+        if (targetx >= 0 && targetx < World.MAZE_WIDTH && targety >= 0 && targety < World.MAZE_HEIGHT) {
             Flame flame = new Flame(world, this, directions[choose][0], directions[choose][1]);
             Thread thread = new Thread(flame);
             world.put(flame, x, y);

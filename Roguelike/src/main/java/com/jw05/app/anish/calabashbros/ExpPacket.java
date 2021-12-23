@@ -4,9 +4,14 @@ import java.awt.Color;
 
 public class ExpPacket extends Treasure{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public ExpPacket(World world)
     {
-        super(world, Color.yellow, (char) 4);
+        super(world, Color.yellow, (char) 11);
     }
     
     @Override

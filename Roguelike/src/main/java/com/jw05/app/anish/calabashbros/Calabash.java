@@ -3,10 +3,12 @@ package com.jw05.app.anish.calabashbros;
 import java.awt.Color;
 import java.util.Random;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 public class Calabash extends Creature {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private int moveX, moveY;
     private int level;
 
@@ -28,7 +30,7 @@ public class Calabash extends Creature {
         moveX = directionx;
         moveY = directiony;
         int targetx = x + directionx, targety = y + directiony;
-        if (targetx >= 0 && targetx < world.MAZE_WIDTH && targety >= 0 && targety < world.MAZE_HEIGHT) {
+        if (targetx >= 0 && targetx < World.MAZE_WIDTH && targety >= 0 && targety < World.MAZE_HEIGHT) {
             world.tryMove(this, x, y, targetx, targety);
         }
     }
@@ -36,7 +38,7 @@ public class Calabash extends Creature {
     public synchronized void tryAttack() {
         int x = getX(), y = getY();
         int targetx = x + moveX, targety = y + moveY;
-        if (targetx >= 0 && targetx < world.MAZE_WIDTH && targety >= 0 && targety < world.MAZE_HEIGHT
+        if (targetx >= 0 && targetx < World.MAZE_WIDTH && targety >= 0 && targety < World.MAZE_HEIGHT
                 && world.get(targetx, targety).isEvil()) {
             Thing th = world.get(targetx, targety);
             Random random = new Random();
@@ -49,7 +51,8 @@ public class Calabash extends Creature {
     public void tryBomb() {
         int x = getX(), y = getY();
         int targetx = x + moveX, targety = y + moveY;
-        if (targetx >= 0 && targetx < world.MAZE_WIDTH && targety >= 0 && targety < world.MAZE_HEIGHT && decreaseMagic(10)) {
+        if (targetx >= 0 && targetx < World.MAZE_WIDTH && targety >= 0 && targety < World.MAZE_HEIGHT
+                && decreaseMagic(10)) {
             Flame flame = new Flame(world, this, moveX, moveY);
             Thread thread = new Thread(flame);
             world.put(flame, x, y);

@@ -1,9 +1,20 @@
 package com.jw05.app.anish.calabashbros;
 
-public class Tile<T extends Thing> {
+import java.io.Serializable;
 
+import com.google.gson.annotations.Expose;
+
+public class Tile<T extends Thing> implements Serializable {
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    @Expose
     private T thing;
+    @Expose
     private int xPos;
+    @Expose
     private int yPos;
 
     public T getThing() {

@@ -1,9 +1,13 @@
 package com.jw05.app.anish.calabashbros;
 
 import java.awt.Color;
+import java.io.Serializable;
 
-public class Thing {
+import com.google.gson.annotations.Expose;
 
+public class Thing implements Serializable{
+
+    private static final long serialVersionUID = 1L;
     protected World world;
     protected Thing tempThing;
     private final boolean standable;
@@ -64,6 +68,10 @@ public class Thing {
 
     private Color color;
 
+    public void setWorld(World world)
+    {
+        this.world = world;
+    }
     public Color getColor() {
         return this.color;
     }
@@ -82,6 +90,7 @@ public class Thing {
         tempThing = t;
     }
 
+    @Expose
     private final char glyph;
 
     public char getGlyph() {
@@ -144,6 +153,5 @@ public class Thing {
     public int getExp(){
         return exp;
     }
-
 
 }

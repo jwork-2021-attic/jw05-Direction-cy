@@ -6,14 +6,16 @@ import java.util.concurrent.TimeUnit;
 
 public class Monster extends Creature implements Runnable {
 
+
+    private static final long serialVersionUID = 1L;
     protected int bothX;
     protected int bothY;
     protected int[][] directions = { { 0, 1 }, { 0, -1 }, { -1, 0 }, { 1, 0 } };
 
-    public Monster(World world, Color color, int healthLimit, int health, int attack, int exp) {
-        super(color, (char) 1, world, true);
+    public Monster(World world, char glyph, Color color, int healthLimit, int attack, int exp) {
+        super(color, glyph, world, true);
         this.healthLimit = healthLimit;
-        this.health = health;
+        this.health = healthLimit;
         this.attack = attack;
         this.exp = exp;
     }
@@ -53,7 +55,7 @@ public class Monster extends Creature implements Runnable {
                 return;
             tryWalk(inSight(5));
             try {
-                TimeUnit.MILLISECONDS.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(300);
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -92,7 +94,8 @@ public class Monster extends Creature implements Runnable {
 
     protected boolean inBoundary(int x, int y)
     {
-        return x >= 0 && x < world.MAZE_WIDTH && y >= 0 && y < world.MAZE_HEIGHT && x >= bothX - 5 && x <= bothX + 5 && y >= bothY - 5 && y <= bothY + 5; 
+        return x >= 0 && x < World.MAZE_WIDTH && y >= 0 && y < World.MAZE_HEIGHT && x >= bothX - 5 && x <= bothX + 5
+                && y >= bothY - 5 && y <= bothY + 5;
     }
 
     protected int inSight(int d)

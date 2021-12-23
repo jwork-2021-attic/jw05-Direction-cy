@@ -4,6 +4,10 @@ import java.awt.Color;
 
 public class Creature extends Thing {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     protected boolean key;
 
     Creature(Color color, char glyph, World world, boolean evil) {

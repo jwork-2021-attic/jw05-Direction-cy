@@ -4,9 +4,14 @@ import java.awt.Color;
 
 public class HealthMedication extends Treasure{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public HealthMedication(World world)
     {
-        super(world, Color.green, (char) 3);
+        super(world, Color.green, (char) 9);
     }
 
     @Override

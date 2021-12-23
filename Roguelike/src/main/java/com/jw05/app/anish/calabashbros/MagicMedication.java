@@ -4,9 +4,14 @@ import java.awt.Color;
 
 public class MagicMedication extends Treasure{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public MagicMedication(World world)
     {
-        super(world, Color.blue, (char) 3);
+        super(world, Color.blue, (char) 10);
     }
 
     @Override

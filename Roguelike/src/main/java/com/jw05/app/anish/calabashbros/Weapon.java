@@ -4,9 +4,14 @@ import java.awt.Color;
 
 public class Weapon extends Treasure{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     public Weapon(World world)
     {
-        super(world, Color.cyan, (char) 18);
+        super(world, Color.cyan, (char) 12);
     }
 
     @Override

@@ -1,12 +1,24 @@
 package com.jw05.app.anish.calabashbros;
 
-public class World {
+import java.io.Serializable;
 
-    public static final int WIDTH = 65;
-    public static final int HEIGHT = 40;
-    public static final int MAZE_WIDTH = 45;
-    public static final int MAZE_HEIGHT = 30;
+import com.google.gson.annotations.Expose;
 
+public class World implements Serializable{
+
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    @Expose
+    public static final int WIDTH = 50;
+    @Expose
+    public static final int HEIGHT = 28;
+    @Expose
+    public static final int MAZE_WIDTH = 30;
+    @Expose
+    public static final int MAZE_HEIGHT = 25;
+    @Expose
     private Tile<Thing>[][] tiles;
 
     public World() {

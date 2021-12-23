@@ -6,13 +6,17 @@ import java.util.concurrent.TimeUnit;
 
 class Flame extends Thing implements Runnable {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private final int moveX;
     private final int moveY;
     private final Creature c;
 
 
     public Flame(World world, Creature c, int moveX, int moveY) {
-        super(Color.red, (char) 7, world, false, false, false, false);
+        super(Color.red, (char) 13, world, false, false, false, false);
         tempThing = c;
         this.c = c;
         this.moveX = moveX;
@@ -23,7 +27,7 @@ class Flame extends Thing implements Runnable {
         for (int i = 1; i <= 5; ++i) {
             int x = getX(), y = getY();
             int targetx = x + moveX, targety = y + moveY;
-            if (targetx >= 0 && targetx < world.MAZE_WIDTH && targety >= 0 && targety < world.MAZE_HEIGHT) {
+            if (targetx >= 0 && targetx < World.MAZE_WIDTH && targety >= 0 && targety < World.MAZE_HEIGHT) {
                 Thing th = world.get(targetx, targety);
                 if (world.tryMove(this, x, y, targetx, targety))
                     ;
