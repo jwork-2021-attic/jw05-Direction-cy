@@ -13,9 +13,9 @@ public class RecordScreenTest {
     @Test
     public void recordScreenTest()
     {
-        RecordScreen recordScreen = new RecordScreen();
-        AsciiPanel terminal = new AsciiPanel(World.WIDTH, World.HEIGHT, AsciiFont.TALRYTH_15_15);
-        recordScreen.displayOutput(terminal);
+        //RecordScreen recordScreen = new RecordScreen();
+        //AsciiPanel terminal = new AsciiPanel(World.WIDTH, World.HEIGHT, AsciiFont.TALRYTH_15_15);
+        //recordScreen.displayOutput(terminal);
     }
     
 }

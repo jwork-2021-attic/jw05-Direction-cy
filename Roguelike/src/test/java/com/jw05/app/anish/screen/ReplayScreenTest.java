@@ -13,9 +13,9 @@ public class ReplayScreenTest {
     @Test
     public void replayScreenTest()
     {
-        ReplayScreen replayScreen = new ReplayScreen();
-        AsciiPanel terminal = new AsciiPanel(World.WIDTH, World.HEIGHT, AsciiFont.TALRYTH_15_15);
-        replayScreen.displayOutput(terminal);
+        //ReplayScreen replayScreen = new ReplayScreen();
+        //AsciiPanel terminal = new AsciiPanel(World.WIDTH, World.HEIGHT, AsciiFont.TALRYTH_15_15);
+        //replayScreen.displayOutput(terminal);
     }
     
 }

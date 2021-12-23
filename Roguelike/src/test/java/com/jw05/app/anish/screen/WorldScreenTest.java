@@ -14,9 +14,10 @@ public class WorldScreenTest {
 
     @Test
     public void worldScreenTest() {
-        WorldScreen worldScreen = new WorldScreen(null);
-        AsciiPanel terminal = new AsciiPanel(World.WIDTH, World.HEIGHT, AsciiFont.TALRYTH_15_15);
-        worldScreen.displayOutput(terminal);
+        //WorldScreen worldScreen = new WorldScreen(null);
+        //AsciiPanel terminal = new AsciiPanel(World.WIDTH, World.HEIGHT, AsciiFont.TALRYTH_15_15);
+        //worldScreen.displayOutput(terminal);
+        /*
         try {
             worldScreen.write();
         } catch (ClassNotFoundException e) {
@@ -25,7 +26,7 @@ public class WorldScreenTest {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        }*/
     }
     
 }
